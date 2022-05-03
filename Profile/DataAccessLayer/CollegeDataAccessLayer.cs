@@ -8,7 +8,7 @@ namespace PROFILE.DataAccessLayer
         public bool AddCollege(College college)
         {
             if (college == null)
-                throw new ArgumentNullException("Location can't be null");
+                throw new ArgumentNullException("College can't be null");
             try
             {
                 _db.Colleges.Add(college);
@@ -17,24 +17,24 @@ namespace PROFILE.DataAccessLayer
             }
             catch (DbUpdateException)
             {
-                //LOG   "DB Update Exception Occured"
+                
                 return false;
             }
             catch (OperationCanceledException)
             {
-                //LOG   "Opreation cancelled exception"
+                
                 return false;
             }
             catch (Exception)
             {
-                //LOG   "unknown exception occured "
+                
                 return false;
             }
         }
          public bool RemoveCollege(int collegeId)
         {
             if (collegeId == 0)
-                throw new ArgumentNullException("Location Id is not provided ");
+                throw new ArgumentNullException("College Id is not provided ");
 
             try
             {
@@ -46,17 +46,17 @@ namespace PROFILE.DataAccessLayer
             }
             catch (DbUpdateException)
             {
-                //LOG   "DB Update Exception Occured"
+                // "DB Update Exception Occured"
                 return false;
             }
             catch (OperationCanceledException)
             {
-                //LOG   "Opreation cancelled exception"
+                //  "Opreation cancelled exception"
                 return false;
             }
             catch (Exception)
             {
-                //LOG   "unknown exception occured "
+                //  "unknown exception occured "
                 return false;
             }
 
@@ -69,12 +69,12 @@ namespace PROFILE.DataAccessLayer
             }
             catch (DbUpdateException)
             {
-                //LOG   "DB Update Exception Occured"
+                // "DB Update Exception Occured"
                 throw new DbUpdateException();
             }
             catch (OperationCanceledException)
             {
-                //LOG   "Opreation cancelled exception"
+                //  "Opreation cancelled exception"
                 throw new OperationCanceledException();
             }
             catch (Exception)
